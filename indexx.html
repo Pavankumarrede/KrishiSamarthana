@@ -1,0 +1,601 @@
+<!-- c:\Users\dasar\Downloads\FarmProject -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRISHISAMARTHANA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: "Courier New", monospace;
+
+            margin: 0;
+            padding: 0;
+            background-color: #2e66aa;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Ensure the navbar is on top */
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            margin: 20px;
+        }
+
+        .lang {
+        max-width: 25%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    select, button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    select {
+        width: 100%;
+    }
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+
+
+        .container1 {
+            font-family: "Courier New", monospace;
+        max-width: 100%;
+        max-height: 50%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #050505;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .c1 {
+        color: #5c0303;
+        margin-bottom: 20px;
+    }
+    .latest-updates {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .latest-updates ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        animation: marquee 30s linear infinite;
+    }
+    .latest-updates ul li {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px;
+        cursor: pointer;
+        color: #ddd;
+        transition: background-color 0.3s ease;
+        font-family: 'Roboto Condensed', sans-serif; /* Example font for news headlines */
+        font-weight: bold;
+    }
+    .latest-updates ul li:hover {
+        color: #3093b4;
+        animation-play-state: paused;
+    }
+    @keyframes marquee {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+    
+    .slideshow-container {
+        max-width: 500px; /* Adjust this value to your desired width */
+    margin: auto;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation: fadeEffect 5s infinite;
+}
+
+@keyframes fadeEffect {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+        #outputText {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        section {
+
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        /* Additional styling for sections */
+        #homeSection { height: 100dvh;
+            width: 209dvh;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgb(5, 168, 183); }
+        #productsSection { 
+            height: 110dvh;
+            width: 209dvh;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgba(45, 45, 219, 0.5); }
+        #servicesSection { 
+            height: 100dvh;
+            width: 209dvh;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgb(182, 35, 42); 
+        }
+        #aboutUsSection { 
+            height: 100dvh;
+            width: 190dvh;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgba(76, 25, 186, 0.5); 
+        }
+        #contactUsSection { 
+            height: 100dvh;
+            width: 190dvh;
+            text-align: center;
+            background-image: url('agriculture_background.jpg'); /* Background image related to agriculture */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            background-color: rgba(8, 137, 96, 0.5); }
+
+        /* Add more CSS styles as needed */
+        
+        /* Style for category links
+        .category-link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s;
+        } */
+
+        .category-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Style for product boxes */
+        .product-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+            gap: 100px;
+            margin-top: 5px;
+            margin-left: 180px;
+            margin-right: 180px;
+        }
+
+        .product-category {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-category img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-category h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #aboutUsSection {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: 5px auto;
+            align-items: center;
+        }
+
+        .contact-section {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    margin-bottom: 30px;
+    color: #333;
+  }
+
+  .social-icons {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .social-icons li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .social-icons a {
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+  }
+
+  .quote {
+    margin-top: 50px;
+    font-style: italic;
+    color: #f6fff8;
+  }
+
+  .feedback-button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .feedback-button:hover {
+    background-color: #45a049;
+  }
+    </style>
+</head>
+<body>
+
+    <header>
+        <br>
+        <br>
+        <h1 data-translate="KRISHISAMARTHANA">KRISHISAMARTHANA</h1>
+    </header>
+    
+    <nav>
+        <a data-translate="Home" href="#homeSection">Home</a>
+        <a data-translate="Products" href="#productsSection">Products</a>
+        <a data-translate="Services" href="#servicesSection">Services</a>
+        <a data-translate="About Us" href="#aboutUsSection">About Us</a>
+        <a data-translate="Contact Us" href="#contactUsSection">Contact Us</a>
+    </nav>
+    
+    <div class="container1">
+        <h1 data-translate="Latest Agriculture Updates" class="c1">Latest Agriculture Updates</h1>
+        
+        <div class="latest-updates">
+            <ul>
+                <li data-translate="Vertical farming" onclick="searchOnYouTube('Vertical farming')">Vertical farming</li>
+                <li data-translate="Hydroponics" onclick="searchOnYouTube('Hydroponics')">Hydroponics</li>
+                <li data-translate="Precision agriculture" onclick="searchOnYouTube('Precision agriculture')">Precision agriculture</li>
+                <li data-translate="Agroforestry" onclick="searchOnYouTube('Agroforestry')">Agroforestry</li>
+                <li data-translate="Integrated Pest Management (IPM)" onclick="searchOnYouTube('Integrated Pest Management (IPM)')">Integrated Pest Management (IPM)</li>
+                <li data-translate="Soil Conservation Techniques" onclick="searchOnYouTube('Soil Conservation Techniques')">Soil Conservation Techniques</li>
+                <li data-translate="Organic Fertilizers and Soil Amendments" onclick="searchOnYouTube('Organic Fertilizers and Soil Amendments')">Organic Fertilizers and Soil Amendments</li>
+                <li data-translate="Drip Irrigation Systems" onclick="searchOnYouTube('Drip Irrigation Systems')">Drip Irrigation Systems</li>
+                <li data-translate="Greenhouse Management" onclick="searchOnYouTube('Greenhouse Management')">Greenhouse Management</li>
+                <li data-translate="Sustainable Livestock Farming Practices" onclick="searchOnYouTube('Sustainable Livestock Farming Practices')">Sustainable Livestock Farming Practices</li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="lang">
+        <h1 data-translate="Select Language">Select Language</h1>
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+            <option value="te">Telugu</option>
+            <option value="mr">Marathi</option>
+            <option value="ta">Tamil</option>
+            <option value="gu">Gujarati</option>
+            <option value="kn">Kannada</option>
+            <option value="ur">Urdu</option>
+            <option value="ml">Malayalam</option>
+            <option value="pa">Punjabi</option>
+            <option value="or">Odia</option>
+            <!-- Add more regional languages as needed -->
+        </select>
+        <br>
+        <button onclick="translateContent()">Translate</button>
+        </div>
+    <div id="outputText">
+
+        <section id="homeSection">
+            <br>
+            <br>
+        <h2 data-translate="Welcome to our KRISHISAMARTHANA">Welcome to our KRISHISAMARTHANA</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="home1.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="home2.jpg" style="width:100%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img src="home3.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="home4.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="home5.jpg" style="width:100%">
+            </div>
+        </div>
+    </section>
+        <section id="productsSection" >
+            <br>
+            <br>
+            <h2 data-translate="Our Products">Our Products</h2>
+            <p data-translate="We offer a wide range of agricultural products including seeds, fertilizers, and pesticides.">We offer a wide range of agricultural products including seeds, fertilizers, and pesticides.</p>
+            
+             
+        
+            <div class="product-box">
+                <div class="product-category">
+                    <a class="category-link" href="http://127.0.0.1:5000" target="_blank" >
+                    <img src="rental.png" alt="Rental">
+                    <h3 data-translate="Rental">Rental</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="https://www.flipkart.com/search?q=seeds" target="_blank">
+                    <img src="seeds.jpg" alt="Seeds">
+                    <h3 data-translate="Seeds">Seeds</h3></a>
+                </div>
+                <!--<div class="product-category">
+                    <a class="category-link" href="samplings.html" target="_blank" >
+                    <img src="samplings.jpg" alt="Samplings">
+                    <h3 data-translate="Samplings">Samplings</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="domesticanimals.html" target="_blank" >
+                    <img src="domesticanimals.png" alt="Domestic Animals">
+                    <h3 data-translate="Domestic Animals">Domestic Animals</h3></a>
+                </div>-->
+                <div class="product-category">
+                    <a class="category-link" href="https://www.flipkart.com/search?q=pesticides" target="_blank">
+                    <img src="pesticides.jpg" alt="Pesticides">
+                    <h3 data-translate="Pesticides">Pesticides</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="https://agmarknet.gov.in/" target="_blank" >
+                    <img src="marketrates.jpg" alt="Market Rates">
+                    <h3 data-translate="Market Rates">Market Rates</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="https://www.google.com/maps/search/nearby+government+agriculture+office" target="_blank" >
+                    <img src="agricultureoffices.jpg" alt="Nearby Govt Agriculture Offices">
+                    <h3 data-translate="Nearby Govt Agriculture Offices">Nearby Govt Agriculture Offices</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="youtube.html" target="_blank" >
+                    <img src="youtubevideos.jpg" alt="YouTube Videos">
+                    <h3 data-translate="YouTube Videos">YouTube Videos</h3></a>
+                </div>
+            </div>
+        </section>
+        <section id="servicesSection" >
+            <br>
+            <br>
+            <h2 data-translate="Our Services">Our Services</h2>
+            <p data-translate="Our services include crop disease, soil testing, and pest management solutions.">Our services include crop consultation, soil testing, and pest management solutions.</p>
+            <br>
+                <br>
+                <br>
+            <div class="product-box">
+                <!--<div class="product-category">
+                    <a class="category-link" href="http://localhost:8502/" target="_blank" >
+                    <img src="cropdisease.jpg" alt="cropdisease">
+                    <h3 data-translate="Crop disease detection">Crop disease detection</h3></a>
+                </div> -->
+                <div class="product-category">
+                    <a class="category-link" href="https://www.google.com/maps/search/nearby+soil+testing+labs" target="_blank" >
+                    <img src="soiltest.jpg" alt="soil test">
+                    <h3 data-translate="Soil testing">Soil testing</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="pestmanagement.html" target="_blank" >
+                    <img src="pestmanagement.jpg" alt="Rental">
+                    <h3 data-translate="pest management solutions">pest management solutions</h3></a>
+                </div>
+                <div class="product-category">
+                    <a class="category-link" href="https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2002012" target="_blank" >
+                    <img src="agricschemes.png" alt="Rental">
+                    <h3 data-translate="Major Government Schemes for Agriculture">Major Government Schemes for Agriculture</h3></a>
+                </div>
+            </div>
+        </section>
+        <section id="aboutUsSection" >
+            <br>
+            <br>
+            <h1 data-translate="About Us">About Us</h1>
+            <div class="about1"><p data-translate="Learn more about our company and our commitment to sustainable agriculture practices.">Learn more about our company and our commitment to sustainable agriculture practices.</p>
+        <p data-translate="Welcome to our agriculture project! We are passionate about sustainable farming practices and providing valuable resources and information to farmers and agriculture enthusiasts. Our mission is to promote innovation, efficiency, and environmental stewardship in agriculture.">Welcome to our agriculture project! We are passionate about sustainable farming practices and providing valuable resources and information to farmers and agriculture enthusiasts. Our mission is to promote innovation, efficiency, and environmental stewardship in agriculture.</p>
+        <h2><p data-translate="Through this project, we aim to:">Through this project, we aim to:</p></h2>
+        </div>
+        <div class="about2">
+
+            <p data-translate="Provide comprehensive educational content on various aspects of agriculture, including crop cultivation, pest management, soil health, sustainable practices, and more.">Provide comprehensive educational content on various aspects of agriculture, including crop cultivation, pest management, soil health, sustainable practices, and more.</p>
+            <p data-translate="Offer practical insights and tips to help farmers enhance productivity, reduce environmental impact, and improve their livelihoods.">Offer practical insights and tips to help farmers enhance productivity, reduce environmental impact, and improve their livelihoods.</p>
+            <p data-translate="Highlight the latest advancements and technologies in the agricultural industry, from precision farming and IoT applications to biotechnology and genetic engineering.">Highlight the latest advancements and technologies in the agricultural industry, from precision farming and IoT applications to biotechnology and genetic engineering.</p>
+            <p data-translate="Facilitate knowledge sharing and collaboration among farmers, researchers, agricultural experts, and policymakers to address common challenges and explore innovative solutions.">Facilitate knowledge sharing and collaboration among farmers, researchers, agricultural experts, and policymakers to address common challenges and explore innovative solutions.</p>
+            <p data-translate="Promote sustainable farming practices that prioritize environmental conservation, resource efficiency, biodiversity preservation, and resilience to climate change.">Promote sustainable farming practices that prioritize environmental conservation, resource efficiency, biodiversity preservation, and resilience to climate change.</p>
+            <p data-translate="Empower farmers with practical tools, resources, and support networks to adopt sustainable farming practices, improve crop yields, and build resilient agricultural systems.">Empower farmers with practical tools, resources, and support networks to adopt sustainable farming practices, improve crop yields, and build resilient agricultural systems.</p>
+
+    </div>
+        </section>
+        <section id="contactUsSection" class="contact-section">
+            <br>
+            <br>
+            <h2 data-translate="Contact Us">Contact Us</h2>
+            <p data-translate="Get in touch with us for inquiries, partnerships, or any other questions you may have.">Get in touch with us for inquiries, partnerships, or any other questions you may have.</p>
+
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://in.linkedin.com/in/manoj-s-d-a9aa2720a?trk=people-guest_people_search-card"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="mailto:sdmanoj365@gmail.com"><i class="far fa-envelope"></i></a></li>
+              </ul>
+
+  <p>Email: 1dt20is053@dsatm.edu.in</p>
+
+
+  <div class="quote">
+    <p data-translate="The farmer is the only man in our economy who buys everything at retail, sells everything at wholesale, and pays the freight both ways.">"The farmer is the only man in our economy who buys everything at retail, sells everything at wholesale, and pays the freight both ways."</p>
+    <p data-translate="- John F. Kennedy">- John F. Kennedy</p>
+  </div>
+
+  <button class="feedback-button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfJAB97nvPwqB_dH0Qwxk0QRlSmKhqpPAz3kelL-hpEVYZQ1Q/viewform?usp=sf_link">Give Feedback</a></button>
+        </section>
+    </div>
+
+    <script>
+        function translateContent() {
+            const targetLanguage = document.getElementById('languageSelect').value;
+            const elementsToTranslate = document.querySelectorAll('[data-translate]');
+            
+            elementsToTranslate.forEach(element => {
+                const originalText = element.dataset.translate;
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${encodeURI(originalText)}`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const translatedText = data[0][0][0];
+                        element.innerText = translatedText;
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            });
+        
+
+        
+        // Show the content section corresponding to the selected navigation item
+                const navLinks = document.querySelectorAll('nav a');
+                navLinks.forEach(link => {
+                    const sectionId = link.dataset.translate.toLowerCase().replace(/\s/g, '') + 'Section';
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        if (link === event.target) {
+                            section.style.display = 'block';
+                        } 
+                    }
+                });
+            }
+            function searchOnYouTube(query) {
+        window.open('https://www.youtube.com/results?search_query=' + encodeURIComponent(query), '_blank');
+    }
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+    </script>
+</body>
+</html>
+
+
+
+
+
